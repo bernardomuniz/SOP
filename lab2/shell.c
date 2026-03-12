@@ -8,8 +8,6 @@
 #include <dirent.h>
 #include <unistd.h>
 
-
-//man 3 cwd
 int mycwd(){
     char cwd[PATH_MAX];
 
@@ -23,7 +21,6 @@ int mycwd(){
 }
 
 int mymkdir(){
-
     char pathname[256];
     scanf("%s", pathname);
     if (mkdir(pathname, 0700) != 0)
@@ -49,37 +46,46 @@ int myrmdir(){
 }
 
 int mycd(){
-    return 0;
-}
+    char in[256];
+    scanf("%s", in);
 
-int mystat(){
+    if (chdir(in) == 0)
+    {
+        printf("Entrou no diretório!\n");
+    }else{
+        printf("bash: cd: Documento: Arquivo ou diretório inexistente\n");
+    }
+    
     return 0;
 }
 
 int myls(){
     struct dirent *dir;
     DIR *d;
+    d = opendir(".");
 
-    char in[256];
-    printf("Diretório a listar: ");
-    scanf("%s", in);
-
-    d = opendir(in);
-    if (d != NULL){
-        while ((dir = readdir(d)) != NULL)
-        {
-            printf("%s\n", dir->d_name);
-        }
-        closedir(d);
-    }else{
-
-        printf("Diretório %s não encontrado!\n", in);
+    if (d == NULL)
+    {
+        perror("ls");
+        return 1;
     }
-    
+
+    while ((dir = readdir(d)) != NULL)
+    {
+        printf("%s\n", dir->d_name);
+    }
+    closedir(d);
+
     return 0;
 }
 
+int mystat(){
 
+
+
+    return 0;
+}
+ 
 int main(int argc, char **argv){
     bool teste = true;
     
@@ -111,14 +117,10 @@ int main(int argc, char **argv){
         {
             mycd();
         }
-        
         else{
-
             printf("Comando inválido!\n");
-        }
-        
+        } 
     }
-    
 
     return 0;
 }
