@@ -2,7 +2,7 @@
 //construtor.
 //Implementação do estacionamento.c
 
-package ex1.semaforo;
+package exemplo1.semaforo;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 

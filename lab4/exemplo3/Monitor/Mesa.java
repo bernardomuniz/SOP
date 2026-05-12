@@ -1,4 +1,4 @@
-package ex3.Monitor;
+package exemplo3.Monitor;
 
 import java.util.LinkedList;
 import java.util.Queue;

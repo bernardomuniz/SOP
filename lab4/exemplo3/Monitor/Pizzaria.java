@@ -1,4 +1,4 @@
-package ex3.Monitor;
+package exemplo3.Monitor;
 
 public class Pizzaria {
     public static void main(String[] args) {

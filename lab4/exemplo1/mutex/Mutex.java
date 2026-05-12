@@ -5,7 +5,7 @@
 
 
 
-package ex1.mutex;
+package exemplo1.mutex;
 import java.util.concurrent.locks.ReentrantLock;
 
 
