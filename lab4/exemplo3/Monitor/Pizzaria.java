@@ -12,7 +12,7 @@ public class Pizzaria {
                 String[] cardapio = {"Calabresa", "Mussarela", "Portuguesa", "Marguerita", "Frango"};
                 for (String p : cardapio) {
                     mesa.colocarPizza(p);
-                    Thread.sleep(0); // Cozinheiro lento
+                    Thread.sleep(0); // Cozinheiro rápido
                 }
             } catch (InterruptedException e) {}
         }).start();
@@ -22,7 +22,7 @@ public class Pizzaria {
             try {
                 for (int i = 0; i < 3; i++) {
                     mesa.retirarPizza();
-                    Thread.sleep(3000); //Entregador rápido
+                    Thread.sleep(3000); //Entregador lento
                 }
             } catch (InterruptedException e) {}
         }).start();

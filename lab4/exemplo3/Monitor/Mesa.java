@@ -19,8 +19,8 @@ class Mesa {
         }
 
         pizzas.add(nomePizza);
-        System.out.println("Cozinheiro colocou a pizza de: " + nomePizza + " | " + "Estoque: " + pizzas.size());
 
+        System.out.println("Cozinheiro colocou a pizza de: " + pizzas);
         // Avisa o entregador que tem pizza pronta
         notifyAll();
     }
@@ -33,8 +33,7 @@ class Mesa {
         }
 
         String p = pizzas.poll();
-        System.out.println("Entregador levou a pizza de: " + p + " | Restante: " + pizzas.size());
-
+        System.out.println("Entregador levou a pizza de: " + p);
         // Avisa o cozinheiro que a mesa liberou
         notifyAll();
         return p;
